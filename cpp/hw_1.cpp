@@ -6,7 +6,8 @@ https://www.zhihu.com/question/389457315/answer/1170354190
 https://www.bilibili.com/video/BV1rt4y127ak/
 
 由于大作业的要求，我们这些程序都会使用 C++ 11 的标准来编写
-
+本作业地址：
+https://paste.ubuntu.com/p/NVwnhtHFWV/
 
 之后的课程中会教如何配置开发环境
 但前两个作业，我们使用在线编译器来完成，省却配置环境的时间

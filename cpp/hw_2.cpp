@@ -8,6 +8,9 @@ https://www.zhihu.com/question/389457315/answer/1170354190
 
 本课程视频页面
 https://www.bilibili.com/video/BV1rt4y127ak/
+
+本作业地址：
+https://paste.ubuntu.com/p/wq6H3sCVNW/
 */
 
 
@@ -43,7 +46,7 @@ log(Args... args) {
 void
 ensure(bool condition, const string &message) {
     if (condition) {
-        log("||| 测试成功");
+        log("||| 测试成功: ", message);
     } else {
         log("*** 测试失败: ", message);
     }
@@ -122,7 +125,21 @@ testLowercase() {
 //     3. 累加这些大写字符之后的结果就是 s 对应的大写后的字符串
 string
 uppercase(const string &s) {
-
+    // 这里是两个字符串, 包含了大写字母和小写字母
+    // 用 const 修饰是因为它们并不会被修改
+    const string lower = "abcdefghijklmnopqrstuvwxyz";
+    const string upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    // 初始化一个空字符串
+    string result = "";
+    size_t i = 0;
+    while (i < s.size()) {
+        // 注意, 这个 find 已经帮你实现了
+        int index = find(lower, s[i]);
+        // 字符串可以用加号拼接, 不明白可以 log 一下
+        result += upper[index];
+        i += 1;
+    }
+    return result;
 }
 
 void
@@ -144,7 +161,26 @@ testUppercase() {
 
 string
 lowercase1(const string &s) {
+    // 这里是两个字符串, 包含了大写字母和小写字母
+    // 用 const 修饰是因为它们并不会被修改
+    const string lower = "abcdefghijklmnopqrstuvwxyz";
+    const string upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    // 初始化一个空字符串
+    string result = "";
+    size_t i = 0;
+    while (i < s.size()) {
+        // 注意, 这个 find 已经帮你实现了
+        int index = find(upper, s[i]);
+        // 字符串可以用加号拼接, 不明白可以 log 一下
+        if (index != -1) {
+            result += lower[index];
+        } else {
+            result += s[i];
+        }
 
+        i += 1;
+    }
+    return result;
 }
 
 void
@@ -164,6 +200,26 @@ testLowercase1() {
 //     1. 参考作业 3
 string
 uppercase1(const string &s) {
+    // 这里是两个字符串, 包含了大写字母和小写字母
+    // 用 const 修饰是因为它们并不会被修改
+    const string lower = "abcdefghijklmnopqrstuvwxyz";
+    const string upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    // 初始化一个空字符串
+    string result = "";
+    size_t i = 0;
+    while (i < s.size()) {
+        // 注意, 这个 find 已经帮你实现了
+        int index = find(lower, s[i]);
+        // 字符串可以用加号拼接, 不明白可以 log 一下
+        if (index != -1) {
+            result += upper[index];
+        } else {
+            result += s[i];
+        }
+
+        i += 1;
+    }
+    return result;
 
 }
 
@@ -190,6 +246,25 @@ testUppercase1() {
 //     2. 注意考虑边界情况，如果计算出来 index 25(也就是字符 'z')，则取出第一位元素（也就是 'a'）
 string
 encode1(const string &s) {
+    // 这里是两个字符串, 包含了大写字母和小写字母
+    // 用 const 修饰是因为它们并不会被修改
+    const string lower = "abcdefghijklmnopqrstuvwxyz";
+    const string upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    // 初始化一个空字符串
+    string result = "";
+    size_t i = 0;
+    while (i < s.size()) {
+        // 注意, 这个 find 已经帮你实现了
+        int index = find(lower, s[i]);
+        // 字符串可以用加号拼接, 不明白可以 log 一下
+        index += 1;
+        index %= 26;
+        // log(index);
+        result += lower[index];
+        // log(result);
+        i += 1;
+    }
+    return result;
 
 }
 
@@ -212,7 +287,26 @@ testEncode1() {
 //     3. 注意考虑边界情况，如果计算出来的元素是 'a'，则取出 'z'
 string
 decode1(const string &s) {
-
+    // 这里是两个字符串, 包含了大写字母和小写字母
+    // 用 const 修饰是因为它们并不会被修改
+    const string lower = "abcdefghijklmnopqrstuvwxyz";
+    const string upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    // 初始化一个空字符串
+    string result = "";
+    size_t i = 0;
+    while (i < s.size()) {
+        // 注意, 这个 find 已经帮你实现了
+        int index = find(lower, s[i]);
+        // 字符串可以用加号拼接, 不明白可以 log 一下
+        index -= 1;
+        if (s[i] == 'a'){
+            index = 25;
+        }
+        result += lower[index];
+        i += 1;
+    }
+    // log(result);
+    return result;
 }
 
 void
@@ -235,6 +329,25 @@ testDecode1() {
 
 string
 encode2(const string &s, int shift) {
+    // 这里是两个字符串, 包含了大写字母和小写字母
+    // 用 const 修饰是因为它们并不会被修改
+    const string lower = "abcdefghijklmnopqrstuvwxyz";
+    const string upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    // 初始化一个空字符串
+    string result = "";
+    size_t i = 0;
+    while (i < s.size()) {
+        // 注意, 这个 find 已经帮你实现了
+        int index = find(lower, s[i]);
+        // 字符串可以用加号拼接, 不明白可以 log 一下
+        index += shift;
+        index %= 26;
+        // log(index);
+        result += lower[index];
+        // log(result);
+        i += 1;
+    }
+    return result;
 
 }
 
@@ -258,6 +371,24 @@ testEncode2() {
 
 string
 decode2(const string &s, int shift) {
+    // 这里是两个字符串, 包含了大写字母和小写字母
+    // 用 const 修饰是因为它们并不会被修改
+    const string lower = "abcdefghijklmnopqrstuvwxyz";
+    const string upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    // 初始化一个空字符串
+    string result = "";
+    size_t i = 0;
+    while (i < s.size()) {
+        // 注意, 这个 find 已经帮你实现了
+        int index = find(lower, s[i]);
+        // 字符串可以用加号拼接, 不明白可以 log 一下
+        index -= shift;
+        index = (index + 26) % 26;
+        result += lower[index];
+        i += 1;
+    }
+    // log(result);
+    return result;
 
 }
 
@@ -285,7 +416,34 @@ testDecode2() {
 //     3. 如果遍历出来的是小写字母，就按照作业 7 中的方式处理
 string
 encode3(const string &s, int shift) {
+    // 这里是两个字符串, 包含了大写字母和小写字母
+    // 用 const 修饰是因为它们并不会被修改
+    const string lower = "abcdefghijklmnopqrstuvwxyz";
+    const string upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    // 初始化一个空字符串
+    string result = "";
+    size_t i = 0;
+    while (i < s.size()) {
+        // 注意, 这个 find 已经帮你实现了
+        int index = find(lower, s[i]);
+        // log(index);
+        // 字符串可以用加号拼接, 不明白可以 log 一下
+        if (index == -1) {
+            // log(11111);
+            result += s[i];
+        } else {
+            index += shift;
+            index %= 26;
+            // log(index);
+            // log(lower[index]);
+            result += lower[index];
+            // log(result);
+        }
 
+        i += 1;
+    }
+    // log(result);
+    return result;
 }
 
 void
@@ -309,6 +467,29 @@ testEncode3() {
 
 string
 decode3(const string &s, int shift) {
+    // 这里是两个字符串, 包含了大写字母和小写字母
+    // 用 const 修饰是因为它们并不会被修改
+    const string lower = "abcdefghijklmnopqrstuvwxyz";
+    const string upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    // 初始化一个空字符串
+    string result = "";
+    size_t i = 0;
+    while (i < s.size()) {
+        // 注意, 这个 find 已经帮你实现了
+        int index = find(lower, s[i]);
+        // log(index);
+        // 字符串可以用加号拼接, 不明白可以 log 一下
+        if (index == -1) {
+            result += s[i];
+        } else{
+            index -= shift;
+            index = (index + 26) % 26;
+            result += lower[index];
+        }
+        i += 1;
+    }
+    // log(result);
+    return result;
 
 }
 
