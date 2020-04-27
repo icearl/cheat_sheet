@@ -12,7 +12,8 @@ https://paste.ubuntu.com/p/NVwnhtHFWV/
 之后的课程中会教如何配置开发环境
 但前两个作业，我们使用在线编译器来完成，省却配置环境的时间
 按照以下步骤使用在线编译器
-1，打开网站 https://www.tutorialspoint.com/compile_cpp11_online.php
+1，打开网站
+https://www.tutorialspoint.com/compile_cpp11_online.php
 2，左侧是代码输入框，删除所有内容
 3，把本文件完整地复制到左侧代码输入框中
 4，点击页面左上角的 Execute 按钮即可运行程序并在右侧显示结果
